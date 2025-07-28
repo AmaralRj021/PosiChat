@@ -1,6 +1,6 @@
-// A importação da imagem foi adicionada novamente e corrigida para a publicação
 import { NavLink } from "react-router-dom";
-import Phonemockup from "../assets/phone-mockup.svg?url";
+// A importação da imagem foi alterada para o método de componente React
+import Phonemockup from "../assets/phone-mockup.svg?react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 
@@ -47,9 +47,8 @@ function Hero() {
         {/* SEÇÃO DIREITA (IMAGEM) */}
         <div className="lg:mt-10">
           <div className="grid h-fit w-full grid-cols-1 justify-items-center">
-            {/* O caminho da imagem foi alterado para usar a variável importada */}
-            <img
-              src={Phonemockup}
+            {/* A imagem agora é renderizada como um componente */}
+            <Phonemockup
               alt="Modelo de telemóvel"
               className="z-10 ml-10 h-fit w-full max-w-xs"
             />
