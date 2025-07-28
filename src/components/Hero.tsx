@@ -1,6 +1,6 @@
-// A importação da imagem foi adicionada novamente
+// A importação da imagem foi adicionada novamente e corrigida para a publicação
 import { NavLink } from "react-router-dom";
-import Phonemockup from "../assets/phone-mockup.svg";
+import Phonemockup from "../assets/phone-mockup.svg?url";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 
