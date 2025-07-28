@@ -1,22 +1,25 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+// Adicionado: Importa as funções para Autenticação e Banco de Dados
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Web app's Firebase configuration
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDmC1wR5K3uMtPSoDzduPpLlobmt6ciX0M",
-  authDomain: "chat-app-914f6.firebaseapp.com",
-  projectId: "chat-app-914f6",
-  storageBucket: "chat-app-914f6.appspot.com",
-  messagingSenderId: "704930821804",
-  appId: "1:704930821804:web:3cddbdabee9250e1b2d109",
+  apiKey: "AIzaSyA5PvYYsEdjkr-mZBQrWLHgKZuRkuaiZeE",
+  authDomain: "posichat-b265c.firebaseapp.com",
+  projectId: "posichat-b265c",
+  storageBucket: "posichat-b265c.firebasestorage.app",
+  messagingSenderId: "488356048749",
+  appId: "1:488356048749:web:27de8dfa8a62c547cbb464"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase Authentication and get a reference to the service
+// Adicionado: Inicializa a Autenticação e o Firestore e os exporta para o resto do site
 export const auth = getAuth(app);
-
-// Initialize Cloud Firestore and get a reference to the service
 export const db = getFirestore(app);

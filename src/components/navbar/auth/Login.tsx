@@ -4,7 +4,7 @@ function Login() {
   return (
     <NavLink to="/login">
       <button className="mr-4 rounded-md py-2 px-4 text-neutral-500 hover:text-white">
-        Login
+        Entrar
       </button>
     </NavLink>
   );

@@ -14,12 +14,12 @@ function SignUpPage() {
   if (error) {
     return (
       <div className="flex h-screen flex-col items-center justify-center gap-2">
-        <p>Error: {error.message}</p>
+        <p>Erro: {error.message}</p>
         <button
           onClick={() => window.location.reload()}
           className="font-semibold text-blue-500 hover:underline hover:underline-offset-2"
         >
-          Try again
+          Tentar novamente
         </button>
       </div>
     );
@@ -27,7 +27,7 @@ function SignUpPage() {
   if (loading) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <p>Loading...</p>
+        <p>A carregar...</p>
       </div>
     );
   }
@@ -45,10 +45,10 @@ function SignUpPage() {
           <div className="m-auto w-full max-w-xs">
             <div className="-mt-60 flex flex-col items-center justify-center gap-4">
               <h1 className="mb-4 text-center text-3xl font-bold">
-                Create Your <br></br> ChatApp Account
+                Crie a sua conta <br></br> PosiChat
               </h1>
 
-              {/* Log in types */}
+              {/* Tipos de Login */}
               <div className="flex w-full flex-col gap-4">
                 <button
                   onClick={signInWithGoogleHandler}
@@ -56,20 +56,20 @@ function SignUpPage() {
                 >
                   <div className="flex flex-row items-center justify-center gap-2">
                     <FaGoogle className="h-4 w-4" />
-                    <div className="font-semibold">Continue with Google</div>
+                    <div className="font-semibold">Continuar com Google</div>
                   </div>
                 </button>
               </div>
 
-              {/* Vertical divider line */}
+              {/* Linha divisória vertical */}
               <div className="h-px w-full bg-neutral-600"></div>
 
-              {/* Sign up with Email */}
+              {/* Criar conta com Email */}
               <Link
                 to="/signup/email"
                 className="font-semibold text-blue-500 hover:underline hover:underline-offset-2"
               >
-                Sign up with Email →
+                Criar conta com E-mail →
               </Link>
             </div>
           </div>

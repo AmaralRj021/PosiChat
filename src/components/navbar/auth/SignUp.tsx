@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 function SignUp() {
   return (
     <NavLink to="/signup">
-      <button className="rounded-lg bg-white py-2 px-4  text-black ring-1 ring-white ring-offset-0 hover:rounded-lg hover:bg-black hover:text-white hover:ring-white">
-        Sign up
+      {/* As classes de estilo do botão foram alteradas para garantir o contraste */}
+      <button className="rounded-lg bg-purple-600 py-2 px-4 font-semibold text-white shadow-md transition-all duration-300 ease-in-out hover:bg-purple-700">
+        Criar Conta
       </button>
     </NavLink>
   );

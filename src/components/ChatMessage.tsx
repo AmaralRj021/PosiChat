@@ -8,7 +8,7 @@ function ChatMessage(props: any) {
   const previousMessage = props.previousMessage;
   const isFirstMessage = !previousMessage;
 
-  // Check if this is the first message or if the previous message was sent by a different user
+  // Verifica se esta é a primeira mensagem ou se a mensagem anterior foi enviada por um utilizador diferente
   const shouldShowProfileImage = isFirstMessage || previousMessage?.uid !== uid;
 
   return (
@@ -23,7 +23,7 @@ function ChatMessage(props: any) {
         (photoURL ? (
           <img
             src={photoURL}
-            alt="profile"
+            alt="perfil"
             loading="lazy"
             className="h-9 w-9 self-end rounded-full"
           />
@@ -38,13 +38,14 @@ function ChatMessage(props: any) {
             isSentMessage ? "text-right" : "text-left"
           } ${shouldShowProfileImage ? "" : "hidden"}`}
         >
-          {userName ? userName.split(" ")[0] : "Guest"}
+          {/* Traduzido "Guest" para "Convidado" */}
+          {userName ? userName.split(" ")[0] : "Convidado"}
         </div>
         <p
           className={`message ${
             isSentMessage
-              ? "w-fit rounded-2xl bg-blue-400"
-              : "w-fit rounded-2xl bg-neutral-500"
+              ? "w-fit rounded-2xl bg-purple-600" // Cor alterada para ser mais acolhedora
+              : "w-fit rounded-2xl bg-neutral-700" // Cor alterada para um cinzento mais suave
           }${
             shouldShowProfileImage ? "" : " mx-10"
           } max-w-xs break-words p-2 text-sm`}

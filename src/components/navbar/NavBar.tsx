@@ -20,7 +20,8 @@ function NavBar() {
     <>
       <nav className="sticky z-50 flex flex-row items-center justify-between py-4">
         <div className="text-xl font-bold text-neutral-200">
-          <NavLink to="/">ChatHub</NavLink>
+          {/* AQUI ESTÁ A ALTERAÇÃO */}
+          <NavLink to="/">PosiChat</NavLink>
         </div>
         <div>
           {user ? (

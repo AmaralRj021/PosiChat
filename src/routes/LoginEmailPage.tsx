@@ -5,7 +5,7 @@ import { Link, Navigate } from "react-router-dom";
 import { auth } from "../firebase";
 import NavBar from "../components/navbar/NavBar";
 
-function LoginEmail() {
+function LoginEmailPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -19,12 +19,12 @@ function LoginEmail() {
   if (error) {
     return (
       <div className="flex h-screen flex-col items-center justify-center">
-        <p>Error: {error.message}</p>
+        <p>Erro: {error.message}</p>
         <button
           onClick={() => window.location.reload()}
           className="font-semibold text-blue-500 hover:underline hover:underline-offset-2"
         >
-          Try again
+          Tentar novamente
         </button>
       </div>
     );
@@ -32,7 +32,7 @@ function LoginEmail() {
   if (loading) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <p>Loading...</p>
+        <p>A carregar...</p>
       </div>
     );
   }
@@ -49,22 +49,22 @@ function LoginEmail() {
         <div className="flex h-screen">
           <div className="m-auto w-full max-w-xs">
             <div className="-mt-60 flex flex-col items-center justify-center gap-4">
-              <h1 className="mb-4 text-3xl font-bold">Log in to ChatApp</h1>
-              {/* Login with Email */}
+              <h1 className="mb-4 text-3xl font-bold">Entrar no PosiChat</h1>
+              {/* Login com Email */}
               <form
                 onSubmit={signInWithEmailAndPasswordHandler}
                 className="flex w-full flex-col gap-4"
               >
                 <input
                   type="email"
-                  placeholder="Email address"
+                  placeholder="Endereço de e-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-md bg-black p-3 ring ring-neutral-800"
                 />
                 <input
                   type="password"
-                  placeholder="Password"
+                  placeholder="Palavra-passe"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full rounded-md bg-black p-3 ring ring-neutral-800"
@@ -76,7 +76,7 @@ function LoginEmail() {
                   <div className="flex h-full flex-row items-center justify-center px-3">
                     <Mail className="h-6 w-6" />
                     <div className="w-full font-semibold">
-                      Continue with Email
+                      Continuar com E-mail
                     </div>
                   </div>
                 </button>
@@ -86,7 +86,7 @@ function LoginEmail() {
                   to="/login"
                   className="font-semibold text-blue-500 hover:underline hover:underline-offset-2"
                 >
-                  ← Back to Login
+                  ← Voltar
                 </Link>
               </div>
             </div>
@@ -97,4 +97,5 @@ function LoginEmail() {
   );
 }
 
-export default LoginEmail;
+// O nome da função foi corrigido para corresponder ao nome do ficheiro
+export default LoginEmailPage;

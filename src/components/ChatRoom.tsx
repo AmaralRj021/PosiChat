@@ -27,7 +27,7 @@ function ChatRoom() {
   const [messages] = useCollectionData(q);
   const [formValue, setFormValue] = useState("");
 
-  // Send message to Firestore
+  // Envia a mensagem para o Firestore
   const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -35,7 +35,7 @@ function ChatRoom() {
     const { uid, photoURL } = user;
 
     if (!formValue.trim()) {
-      // Don't send empty message
+      // Não envia mensagens vazias
       return;
     }
 
@@ -54,7 +54,7 @@ function ChatRoom() {
     }
   };
 
-  // Scroll to bottom of chat when new message is sent
+  // Rola para o final do chat quando uma nova mensagem é enviada
   const dummy = useRef<HTMLDivElement | null>(null);
 
   function scrollToBottom() {
@@ -66,7 +66,7 @@ function ChatRoom() {
   useEffect(() => {
     scrollToBottom();
 
-    // Clean up the scrollToBottom function when the component unmounts
+    // Limpa a função de scroll quando o componente é desmontado
     return () => {
       window.removeEventListener("resize", scrollToBottom);
     };
@@ -102,7 +102,7 @@ function ChatRoom() {
                 <input
                   value={formValue}
                   onChange={(e) => setFormValue(e.target.value)}
-                  placeholder="say something nice"
+                  placeholder="Escreva uma mensagem de apoio..."
                   className="max-h-48 w-full resize-none overflow-y-auto rounded-l-2xl py-2 px-3 text-sm text-black outline-none"
                 />
 
@@ -112,9 +112,9 @@ function ChatRoom() {
               </form>
 
               <div className="flex w-full select-none justify-center pb-2 text-xs text-neutral-500">
-                Please note that all messages sent in the ChatHub chatroom are
-                public and visible to all users. We encourage you to be
-                respectful and mindful of others when using ChatHub.
+                <p className="text-center">
+                  Por favor, lembre-se que todas as mensagens enviadas na sala de chat do PosiChat são públicas. Pedimos que seja respeitoso e atencioso com os outros.
+                </p>
               </div>
             </div>
           </div>

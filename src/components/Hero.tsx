@@ -9,24 +9,30 @@ function Hero() {
   return (
     <>
       <div className="grid-row-2 grid gap-10 md:mt-40 md:grid-cols-2">
-        {/* LEFT */}
+        {/* SEÇÃO ESQUERDA (TEXTO) */}
         <div className="z-20 mt-20 h-full max-w-md content-center justify-self-center text-neutral-200 lg:max-w-md">
-          <h1 className="mb-5 text-5xl font-bold lg:text-6xl">
-            Welcome to ChatHub!
+          
+          {/* Título Principal */}
+          <h1 className="mb-2 text-5xl font-bold lg:text-6xl">
+            PosiChat
           </h1>
 
+          {/* Subtítulo */}
+          <h2 className="mb-5 text-3xl font-semibold text-neutral-300 lg:text-4xl">
+            Você não está só.
+          </h2>
+
+          {/* Texto descritivo */}
           <p className="text-lg md:text-lg">
-            ChatHub is a simple and easy way to join a global chatroom and
-            connect with people from around the world. Whether you're looking to
-            make new friends, share interesting ideas, or just chat with others,
-            ChatHub makes it easy to join the conversation.
+            Bem-vindo(a) ao PosiChat, uma comunidade de apoio e um espaço seguro para partilhar histórias, fazer novas amizades e fortalecer-se. Aqui, a sua voz importa e a sua jornada é respeitada.
           </p>
-          {/* CTA button */}
+
+          {/* Botão de Ação (muda se o usuário está logado ou não) */}
           {user ? (
             <NavLink to="/chatroom">
               <button className="animate-flow relative z-10 mt-5 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 p-0.5 text-base font-medium text-white shadow-lg">
                 <span className="block rounded-lg bg-black px-4 py-2 text-white hover:bg-transparent">
-                  Join Chatroom
+                  Entrar no Chat
                 </span>
               </button>
             </NavLink>
@@ -34,14 +40,14 @@ function Hero() {
             <NavLink to="/signup">
               <button className="animate-flow relative z-10 mt-5 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 p-0.5 text-base font-medium text-white shadow-lg">
                 <span className="block rounded-lg bg-black px-4 py-2 text-white hover:bg-transparent">
-                  Get Started
+                  Junte-se a Nós
                 </span>
               </button>
             </NavLink>
           )}
         </div>
 
-        {/* RIGHT */}
+        {/* SEÇÃO DIREITA (IMAGEM) */}
         <div className="lg:mt-10">
           <div className="grid h-fit w-full grid-cols-1 justify-items-center">
             <img

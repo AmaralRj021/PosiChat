@@ -5,7 +5,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useState } from "react";
 import { auth } from "../firebase";
 
-function SignUpEmail() {
+function SignUpEmailPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -19,12 +19,12 @@ function SignUpEmail() {
   if (error) {
     return (
       <div className="flex h-screen flex-col items-center justify-center">
-        <p>Error: {error.message}</p>
+        <p>Erro: {error.message}</p>
         <button
           onClick={() => window.location.reload()}
           className="font-semibold text-blue-500 hover:underline hover:underline-offset-2"
         >
-          Try again
+          Tentar novamente
         </button>
       </div>
     );
@@ -32,7 +32,7 @@ function SignUpEmail() {
   if (loading) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <p>Loading...</p>
+        <p>A carregar...</p>
       </div>
     );
   }
@@ -50,23 +50,23 @@ function SignUpEmail() {
           <div className="m-auto w-full max-w-xs">
             <div className="-mt-60 flex flex-col items-center justify-center gap-4">
               <h1 className="mb-4 text-center text-3xl font-bold">
-                Create Your <br></br> ChatApp Account
+                Crie a sua conta <br></br> PosiChat
               </h1>
-              {/* Sign up with Email */}
+              {/* Criar conta com Email */}
               <form
                 onSubmit={createUserWithEmailAndPasswordHandler}
                 className="flex w-full flex-col gap-4"
               >
                 <input
                   type="email"
-                  placeholder="Email address"
+                  placeholder="Endereço de e-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-md bg-black p-3 ring ring-neutral-800"
                 />
                 <input
                   type="password"
-                  placeholder="Password"
+                  placeholder="Palavra-passe"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full rounded-md bg-black p-3 ring ring-neutral-800"
@@ -78,7 +78,7 @@ function SignUpEmail() {
                   <div className="flex h-full flex-row items-center justify-center px-3">
                     <Mail className="h-6 w-6" />
                     <div className="w-full font-semibold">
-                      Continue with Email
+                      Continuar com E-mail
                     </div>
                   </div>{" "}
                 </button>
@@ -88,7 +88,7 @@ function SignUpEmail() {
                   to="/signup"
                   className="font-semibold text-blue-500 hover:underline hover:underline-offset-2"
                 >
-                  ← Other sign up options
+                  ← Outras opções de registo
                 </Link>
               </div>
             </div>
@@ -99,4 +99,4 @@ function SignUpEmail() {
   );
 }
 
-export default SignUpEmail;
+export default SignUpEmailPage;
