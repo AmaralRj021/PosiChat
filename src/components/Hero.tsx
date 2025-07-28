@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-// A importação da imagem foi alterada para o método de componente React
-import Phonemockup from "../assets/phone-mockup.svg?react";
+// A importação do PhoneMockup foi comentada para o teste
+// import PhoneMockup from "./PhoneMockup";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 
@@ -44,14 +44,15 @@ function Hero() {
           )}
         </div>
 
-        {/* SEÇÃO DIREITA (IMAGEM) */}
+        {/* SEÇÃO DIREITA (IMAGEM) - TEMPORARIAMENTE REMOVIDA PARA DEBUG */}
         <div className="lg:mt-10">
           <div className="grid h-fit w-full grid-cols-1 justify-items-center">
-            {/* A imagem agora é renderizada como um componente */}
-            <Phonemockup
+            {/* O componente da imagem foi comentado para o teste
+            <PhoneMockup
               alt="Modelo de telemóvel"
               className="z-10 ml-10 h-fit w-full max-w-xs"
             />
+            */}
             <div className="absolute ml-[10rem] mt-[12rem] h-96 w-96 animate-blob rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-70 blur-3xl filter transition lg:w-[30rem]"></div>
             <div className="-delay-4000 absolute mr-[10rem] mt-[2rem] h-96 w-72 animate-blob rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-70 blur-3xl filter transition lg:mt-0"></div>
             <div className="-delay-6000 absolute mt-[25rem] mr-[15em] h-96 w-80 animate-blob rounded-full bg-gradient-to-r from-blue-500 to-purple-500 blur-3xl filter transition lg:w-[15rem]"></div>
