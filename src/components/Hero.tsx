@@ -1,5 +1,6 @@
+// A importação da imagem foi adicionada novamente
 import { NavLink } from "react-router-dom";
-// A linha de import da imagem foi REMOVIDA
+import Phonemockup from "../assets/phone-mockup.svg";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 
@@ -46,9 +47,9 @@ function Hero() {
         {/* SEÇÃO DIREITA (IMAGEM) */}
         <div className="lg:mt-10">
           <div className="grid h-fit w-full grid-cols-1 justify-items-center">
-            {/* AQUI ESTÁ A ALTERAÇÃO: O caminho da imagem foi corrigido */}
+            {/* O caminho da imagem foi alterado para usar a variável importada */}
             <img
-              src="/phone-mockup.svg"
+              src={Phonemockup}
               alt="Modelo de telemóvel"
               className="z-10 ml-10 h-fit w-full max-w-xs"
             />
